@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hello.css') }}">
+<!--  python 변수만 사용하는 경우 간단하게 {{ var_name }} 중괄호 둘 -->
+<!--  python 반복문 등 명령어를 사용하는 경우 {% for i in var %} {% endfor %}중괄호와 % -->
+</head>
+<body>
+    <h1> kth </h1>
+    <div class="container">
+        <table>
+            <thead>
+                <div class="trc">
+                    <tr class=p"tr">
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>내용</th>
+                    </tr>
+                </div>
+            </thead>
+            <tbody>
+                {% for i in data_list %}
+                <tr>
+                    <td> {{ i[0] }} </td>
+                    <td> {{ i[1] }} </td>
+                    <td> {{ i[2] }} </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="/write">
+            <button type="submit">글 쓰기</button>
+        </form>
+    </div>
+</body>
+</html>
